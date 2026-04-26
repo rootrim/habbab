@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'weekly_plan.dart';
-// import 'subject_track.dart';
-// import 'summary.dart';
+import 'subject_track.dart';
+import 'summary.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -15,15 +15,11 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _screens = [
     const WeeklyPlanScreen(),
-    // const SubjectTrackScreen(),
-    // const SummaryScreen(),
+    const SubjectTrackScreen(),
+    const SummaryScreen(),
   ];
 
-  final List<String> _titles = [
-    'Haftalık Plan',
-    'Ders Konu Takip',
-    'Genel Özet',
-  ];
+  final List<String> _titles = ['Weekly Plan', 'Subject Track', 'Summary'];
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +38,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.calendar_today),
-              title: const Text('Haftalık Plan'),
+              title: const Text('Weekly Plan'),
               selected: _selectedIndex == 0,
               onTap: () {
                 setState(() => _selectedIndex = 0);
@@ -51,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.book),
-              title: const Text('Ders Konu Takip'),
+              title: const Text('Subject Track'),
               selected: _selectedIndex == 1,
               onTap: () {
                 setState(() => _selectedIndex = 1);
@@ -60,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             ListTile(
               leading: const Icon(Icons.bar_chart),
-              title: const Text('Genel Özet'),
+              title: const Text('Summary'),
               selected: _selectedIndex == 2,
               onTap: () {
                 setState(() => _selectedIndex = 2);

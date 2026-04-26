@@ -10,6 +10,6 @@ class SummaryScreen extends StatefulWidget {
 class _SummaryScreenState extends State<SummaryScreen> {
   @override
   Widget build(BuildContext context) {
-    return Text("TODO");
+    return Placeholder();
   }
 }
